@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen - Painel de Controle</title>
+    <link rel="stylesheet" href="Painel.css">
+    <link rel="stylesheet" href="cabecalho.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ruda:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="PopUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="controle-logo">
+            <img id="separa-logo-principal" class="logo-titulo" src="Midia/Logo_Queen.png"
+                alt="Logo do Plataforma Queen">
+        </div>
+        <nav class="menu">
+            <a id="home" class="item-menu" href="../LandingPage.html">Home</a>
+            <a id="home" class="item-menu" href="../LandingPage.html#Login_Registro">Entrar</a>
+            <a class="item-menu" href="../LandingPage.html#Login_Registro" id="btnRegistro">Cadastro</a>
+            <button id="PopUpAddAluno" class="popup-ativar">Adicionar Alunos</button>
+            <!-- Botão para ativar popup de criar turma -->
+            <button id="PopUpDefMedia">Definir Média</button>
+            <!-- Botão para ativar popup de média de média de aprovação -->
+            <button id="PopUpPontuar" class="popup-ativar">Pontuar Atividades</button>
+            <!-- Botão para ativar popup de pontuar atividades -->
+            <button id="PopUpNotaRecu">Definir Nota de Recuperação</button>
+            <!-- Botão para ativar popup de nota de recuperação -->
+            <button id="PopUpPontuarRecu" class="popup-ativar">Pontuar Recuperação</button>
+            <!-- Botão para ativar popup de pontuar recuperação -->
+        </nav>
+        <div class="menu-hamburguer" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <main>
+        <h1>Painel de Controle</h1>
+        <!--<section id="Config_Midia">-->
+        <section id="Tabela">
+            <h2 id="Rascunho">Tabela de Alunos</h2>
+            <!-- Tabela para exibir o relatório -->
+            <table>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Av1</th>
+                    <th>Av2</th>
+                    <th>Av3</th>
+                    <th>Média</th>
+                    <th>Recuperação</th>
+                    <th>Situação</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal Criar Turma -->
+<div id="popupTurma" class="popup">
+    <div class="popup-content">
+        <span class="close" id="closeTurma">&times;</span>
+        <h2>Adição de alunos</h2>
+        <form id="CadastrarAlunos">
+            <label for="inputNomesTurma">Informe o Nome do aluno:</label>
+            <input type="text" id="inputNomesTurma" required class="camposEntrada">
+            <input type="submit" id="salvarTurma" value="Salvar Turma" class="btnEnvio">
+        </form>
+    </div>
+</div>
+
+<!-- Modal Definir Média -->
+<div id="popupMedia" class="popup">
+    <div class="popup-content">
+        <span class="fechar">&times;</span>
+        <h2>Definir Média</h2>
+        <form id="formMedia">
+            <label for="inputMedia">Informe a média necessária para aprovação:</label>
+            <input type="number" id="inputMedia" required>
+            <button type="submit" class="btnEnvio">Salvar Média</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Pontuar Atividades -->
+<div id="popupPontuar" class="popup">
+    <div class="popup-content">
+        <span class="close" id="closePontuar">&times;</span>
+        <h2>Pontuar Atividades</h2>
+        <form id="formPontuar">
+            <p>Nome dos Alunos: <input type="text" id="NomesAlunos" class="camposEntrada"></p>
+            <p>Nota dos Alunos: <input type="text" id="NotaAluno" class="camposEntrada"></p>
+            <p>Defina a avaliação:</p>
+            <p>
+                <input type="radio" value="Avaliação1" id="Av1" name="LocalAv" required>
+                <label for="Av1">Avaliação 1</label>
+                <input type="radio" value="Avaliação2" id="Av2" name="LocalAv" required>
+                <label for="Av2">Avaliação 2</label>
+                <input type="radio" value="Avaliação3" id="Av3" name="LocalAv" required>
+                <label for="Av3">Avaliação 3</label>
+            </p>
+            <input type="submit" value="Pontuar Atividade" class="btnEnvio">
+        </form>
+    </div>
+</div>
+
+<!-- Modal Definir Nota de Recuperação -->
+<div id="popupRecuperacaoNota" class="popup">
+    <div class="popup-content">
+        <span class="fechar">&times;</span>
+        <h2>Definir Nota de Recuperação</h2>
+        <form id="formNotaRecu">
+            <label for="inputRecuperacao">Informe a nota para aprovação na recuperação:</label>
+            <input type="number" id="inputRecuperacao" required>
+            <button type="submit" class="btnEnvio">Salvar Nota</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Pontuar Recuperação -->
+<div id="popupPontuarRecu" class="popup">
+    <div class="popup-content">
+        <span class="close" id="closePontuarRecu">&times;</span>
+        <h2>Pontuar Recuperação</h2>
+        <form id="formPontuarRecu">
+            <label for="alunoRecu">Nome do Aluno:</label>
+            <input type="text" id="alunoRecu" required class="camposEntrada">
+            <label for="notaRecu">Nota de Recuperação:</label>
+            <input type="number" id="notaRecu" required class="camposEntrada">
+            <input type="submit" value="Salvar Nota de Recuperação" class="btnEnvio">
+        </form>
+    </div>
+</div>
+
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.querySelector('.menu');
+
+        // Adiciona um evento de clique no botão de menu hamburguer
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('menu-ativo'); // Alterna entre mostrar e esconder o menu
+        });
+    </script>
+
+    <!--<script src="versao17.js"></script>Inclui o arquivo JavaScript -->
+    <script src="PainelDeControle.js"></script>
+
+
+
+</body>
+
+</html>

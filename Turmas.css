@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.header {
+    background-color: #f7dd468b;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    
+
+}
+
+.link_home{
+    text-decoration: none; /* Remove o sublinhado dos links */
+
+}
+
+.header p {
+    font-size: 14px;
+}
+
+.header-links  {
+    margin-left: 15px;
+    color: #1a73e8;
+    
+}
+
+.logo_control{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+    gap: 30px;
+}
+
+.logo_control img {
+    max-width: 100px; 
+    height: auto;
+}
+
+#controle_div{
+    display: flex;
+    align-items: center;
+    
+}
+
+#openFormButton{
+    font-family: 'Ruda', 'Roboto';
+    background-color: #f7dd468b;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: #333;
+    transition: background-color 0.2s ease;
+}
+
+#openFormButton:hover{
+    background-color: #FFFDE6;
+}
+
+#btn_home{
+    font-family: 'Ruda', 'Roboto';
+    background-color: #f7dd468b;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: #333;
+    transition: background-color 0.2s ease;
+}
+
+#btn_home:hover{
+    background-color: #FFFDE6;
+}
+
+.botao{
+    font-size: 22px;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    padding: 15px;
+}
+
+.card-header {
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-size: 16px;
+}
+
+.blue {
+    background-color: #9e5540;
+}
+
+.gray {
+    background-color: #6c757d;
+}
+
+.purple {
+    background-color: #6f42c1;
+}
+
+.card-body {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card-body p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1020px) {
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+
+    .header-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botao {
+        margin: 5px 0;
+        width: 95%; /* Botões ocupam toda a largura */
+    }
+
+    
+
+    .modal-content {
+        width: 90%; /* Modal ocupa 90% da largura */
+    }
+}
+
